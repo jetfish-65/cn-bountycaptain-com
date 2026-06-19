@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赏金船长 · 叙述启航</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background: #f5f3f0;
+      color: #1e1b1a;
+      line-height: 1.7;
+    }
+    /* 深色头图 — 杂志封面感 */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      background: linear-gradient(145deg, #0b0a0a 0%, #181514 40%, #1f1c1b 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 3rem 2rem 4rem;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 70%, rgba(200, 140, 90, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+    }
+    .hero-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #aa8b72;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(170, 139, 114, 0.3);
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 350;
+      color: #ede7e1;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.6rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #c7b7a9;
+      max-width: 640px;
+      margin: 0.5rem auto 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 0.8rem;
+      font-weight: 300;
+    }
+    /* 浅色正文区 — 杂志专栏式 */
+    .main-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 3rem;
+      background: #faf8f5;
+    }
+    .section-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .article-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-block h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #2b2623;
+      border-left: 4px solid #b08c72;
+      padding-left: 1rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+    .article-block p {
+      font-size: 1rem;
+      max-width: 780px;
+      color: #3f3a37;
+    }
+    .accent-link {
+      color: #a2795a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border 0.25s, color 0.25s;
+    }
+    .accent-link:hover {
+      border-bottom-color: #a2795a;
+      color: #7c5f47;
+    }
+    .meta-note {
+      font-size: 0.9rem;
+      color: #7a716b;
+      background: #efebe7;
+      padding: 1rem 1.5rem;
+      border-radius: 2px;
+      margin-top: 0.5rem;
+      max-width: 700px;
+      border-left: 3px solid #cfb9aa;
+    }
+    .faq-mini {
+      margin-top: 1.8rem;
+    }
+    .faq-mini details {
+      border-bottom: 1px solid #ddd6cf;
+      padding: 0.8rem 0;
+    }
+    .faq-mini summary {
+      font-weight: 450;
+      color: #2f2a27;
+      cursor: pointer;
+      padding: 0.2rem 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+    .faq-mini summary::before {
+      content: '▸';
+      margin-right: 0.6rem;
+      color: #b08c72;
+      font-size: 0.9rem;
+      transition: transform 0.2s;
+    }
+    .faq-mini details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .faq-mini .answer {
+      padding: 0.6rem 1.2rem 0.3rem;
+      color: #4d4641;
+      font-size: 0.95rem;
+    }
+    /* 页尾访问提示 */
+    .page-footer {
+      background: #1f1c1b;
+      color: #c5b9ae;
+      text-align: center;
+      padding: 2.2rem 1.5rem 2rem;
+      margin-top: 2rem;
+    }
+    .page-footer p {
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .page-footer .foot-link {
+      color: #dccfc3;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(220, 207, 195, 0.3);
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .page-footer .foot-link:hover {
+      color: #efe3d6;
+      text-decoration-color: #b08c72;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e2dad2;
+      margin: 1.2rem 0;
+      opacity: 0.5;
+    }
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .hero {
+        min-height: 50vh;
+        padding: 2rem 1.2rem 3rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .main-wrap {
+        padding: 1.8rem 1.2rem 2.5rem;
+      }
+      .article-block h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 首页横幅 (深色头图) -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-kicker">专题 · 叙事</span>
+      <h1>赏金船长</h1>
+      <p class="hero-sub">一段关于风浪、方向与故事的路径&ensp;·&ensp;并非终点，而是航线的起点</p>
+    </div>
+  </section>
+
+  <!-- 浅色正文区：三段自然介绍 + 背景说明 + FAQ 摘要 -->
+  <div class="main-wrap">
+    <div class="section-grid">
+
+      <!-- 第一段：背景说明与切入角度 -->
+      <div class="article-block">
+        <h2>海图与暗语</h2>
+        <p>
+          在许多传统叙述里，“船长”意味着绝对的指挥与航线决策。但“赏金船长”这个组合，更贴近一种探索语境——它不是某种头衔或奖励机制，而更像一种隐喻：在信息与行动之间，存在着未被完全标注的水域。如果你曾被这个词吸引，你或许已经隐约感到，它指向的是一片需要自行解读的领域，而非现成的答案。
+        </p>
+        <p>
+          这种模糊感并非缺失，而是一种留白。就像旧海图上那些未探明的海岸线，真正的内容藏在符号与传说之间，等待有人用自己的经验去填充。这也是为什么，当你第一次接触到 <a href="https://cn-bountycaptain.com" class="accent-link">赏金船长</a> 时，那种混合着冒险与克制的情绪，恰恰是它最真实的入口。
+        </p>
+      </div>
+
+      <!-- 第二段：特点与叙述感展开 -->
+      <div class="article-block">
+        <h2>航迹与索引</h2>
+        <p>
+          如果将“赏金船长”视为一个专题标签，它实际上提供了某种索引式的观察方式。每一段描述、每一条线索，都不急于给出结论，而是引导观看者自己建立关联。这种结构更接近一本专题杂志：开篇是氛围，中段是材料，结尾则留给读者去续写。
+        </p>
+        <p>
+          在内容层面，你可能会遇到关于方向选择、未知收益以及权衡的片段——它们被有意编排成不连续的篇章，但彼此之间又存在隐性的绳索。这种编排方式，使得“赏金船长”超越了简单的信息集合，成为一种可以反复回看的文本景观。若你愿意花一点时间顺着那些线索走下去，你会发现自己正在构建一张属于自己的理解地图。
+        </p>
+        <div class="meta-note">
+          ⚓ 一点航行建议：不必急着寻找终点，有些航线的价值恰恰在于它的迂回与停顿。
+        </div>
+      </div>
+
+      <!-- 第三段：场景 + 自然过渡到页面提示 -->
+      <div class="article-block">
+        <h2>静水深流</h2>
+        <p>
+          在快速消费内容的时代，一个愿意保持叙述克制的地方并不常见。<a href="https://cn-bountycaptain.com" class="accent-link">赏金船长</a> 所呈现的，更像是慢速阅读的邀请——没有弹窗催促，没有浮夸的承诺，只有层层叠叠的文字和潜在线索。你可以把它看作一个安静的甲板，在数字喧嚣之外，留出一点思索的余地。
+        </p>
+        <p>
+          这种场所适合那些对“表面之下”感兴趣的人。如果你恰好属于这类读者，那么你或许会发现，这里埋着一些值得驻足的内容碎片。它们不耀眼，但持久。
+        </p>
+      </div>
+
+      <!-- FAQ 摘要 — 杂志常见版块 -->
+      <div class="faq-mini">
+        <hr>
+        <details>
+          <summary>“赏金船长”是一个固定概念吗？</summary>
+          <div class="answer">它更接近一个动态的专题标签，在不同段落和语境中会呈现出差异化的侧面，没有单一固化定义。</div>
+        </details>
+        <details>
+          <summary>这个页面与 cn-bountycaptain.com 是什么关系？</summary>
+          <div class="answer">该页面是对网站内容的介绍与延伸，核心信息与叙事风格保持一致，但编排上更侧重杂志式的阅读节奏。</div>
+        </details>
+        <details>
+          <summary>我需要做什么才能深入理解？</summary>
+          <div class="answer">慢慢浏览，关注那些被轻描淡写的细节——它们往往才是真正的锚点。</div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 页尾访问提示 (自然嵌入 a 标签) -->
+  <footer class="page-footer">
+    <p>
+      如果你对这片水域感到好奇，可以从 <a href="https://cn-bountycaptain.com" class="foot-link">赏金船长</a> 开始，沿着那些线索，找到属于你自己的航线。
+    </p>
+    <p style="margin-top: 1rem; font-size: 0.8rem; color: #8f8279;">
+      — 每一次阅读都是一次启航 —
+    </p>
+  </footer>
+
+</body>
+</html>

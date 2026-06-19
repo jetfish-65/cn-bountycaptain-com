@@ -1,2 +1,34 @@
-# cn-bountycaptain-com
-赏金船长 - https://cn-bountycaptain.com
+# 赏金船长 - 官方网站
+
+## 简介
+
+**赏金船长** 是一个以海洋冒险与赏金任务为主题的在线平台。网站 [cn-bountycaptain.com](https://cn-bountycaptain.com) 为用户提供与“赏金船长”相关的信息、动态与服务入口。无论你是对海洋探险感兴趣，还是希望了解赏金任务的概念，这里都是你探索的起点。
+
+## 网站特点
+
+- **主题鲜明**：围绕“赏金船长”这一核心概念，营造独特的航海冒险氛围。
+- **信息集中**：在 [cn-bountycaptain.com](https://cn-bountycaptain.com) 上，你可以快速找到关于赏金船长的最新资讯与资源。
+- **用户友好**：界面简洁直观，便于访问者浏览和获取所需内容。
+- **持续更新**：网站内容会随“赏金船长”相关动态进行维护与更新。
+
+## 访问方式
+
+你只需在浏览器地址栏输入以下 URL 即可直接访问：
+
+> [https://cn-bountycaptain.com](https://cn-bountycaptain.com)
+
+建议使用最新版本的 Chrome、Firefox、Edge 或 Safari 浏览器，以获得最佳浏览体验。
+
+## 关于“赏金船长”
+
+“赏金船长”是一个富有想象力的概念，融合了航海、冒险与任务挑战的元素。网站致力于为用户呈现这一主题下的趣味内容与实用信息。如果你对海洋文化或赏金任务机制感兴趣，不妨前往 [cn-bountycaptain.com](https://cn-bountycaptain.com) 一探究竟。
+
+## 注意事项
+
+- 本网站内容仅供信息参考，请理性浏览。
+- 请遵守相关法律法规，勿将网站信息用于任何非法或违规用途。
+- 如有疑问或建议，可通过网站提供的联系方式进行反馈。
+
+---
+
+*感谢访问赏金船长官方网站 —— [cn-bountycaptain.com](https://cn-bountycaptain.com)*

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jetfish-65.github.io/cn-bountycaptain-com/sitemap.xml
